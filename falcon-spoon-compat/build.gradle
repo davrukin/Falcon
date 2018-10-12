@@ -1,4 +1,6 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
 
 version = rootProject.ext.version
 
@@ -8,7 +10,6 @@ repositories {
 
 android {
   compileSdkVersion rootProject.ext.compileSdkVersion
-  buildToolsVersion rootProject.ext.buildToolsVersion
 
   defaultConfig {
     minSdkVersion rootProject.ext.minSdkVersion
@@ -31,8 +32,9 @@ android {
 dependencies {
   implementation 'com.android.support.test:rules:1.0.2'
   implementation project(':falcon')
-  api "com.squareup.spoon:spoon-client:2.0.0-SNAPSHOT"
-  api 'junit:junit:4.12'
+  implementation "com.squareup.spoon:spoon-client:2.0.0-SNAPSHOT"
+  implementation 'junit:junit:4.12'
+  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 }
 
 ext {

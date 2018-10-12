@@ -3,6 +3,7 @@ package com.jraska.falcon;
 import android.app.Activity;
 import android.content.Context;
 
+import android.graphics.Bitmap;
 import com.squareup.spoon.SpoonRule;
 
 import org.junit.Rule;
@@ -39,7 +40,7 @@ public final class FalconSpoonRule implements TestRule {
     File screenshot = spoonRule.screenshot(activity, tag);
 
     // File will be overwritten with new screenshot
-    Falcon.takeScreenshot(activity, screenshot);
+    Falcon.takeScreenshot(activity, screenshot, Bitmap.CompressFormat.JPEG);
 
     return screenshot;
   }
